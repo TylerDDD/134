@@ -1,6 +1,17 @@
-﻿// Задача номер 68.
+﻿// Задача номер 64.
 
-Console.WriteLine("Введите два положительных числа: M и N.");
+int M = Convert.ToInt32(Console.ReadLine());
+int N = Convert.ToInt32(Console.ReadLine());
+string PrintNumbers(int start, int end)
+{
+    if (start == end) return start.ToString();
+    return (start + ", " + PrintNumbers(start + 1, end));
+}
+Console.WriteLine(PrintNumbers(M, N));
+
+// Задача номер 68.
+
+/* Console.WriteLine("Введите два положительных числа: M и N.");
 int m = InputInt("Введите M: ");
 int n = InputInt("Введите N: ");
 Console.WriteLine($"A({m}, {n}) = {Akkerman(m, n)}");
@@ -19,7 +30,7 @@ int Akkerman(int m, int n)
         return Akkerman(m - 1, 1);
     else
         return Akkerman(m - 1, Akkerman(m, n - 1));
-}
+} */
 
 
 // Задача номер 66.
@@ -42,27 +53,3 @@ int CountNaturalSum(int m, int n)
 }  */
 
 
-// Задача номер 64.
-
-/* int n = InputInt("Введите положительное число");
-int m = 1;
-if (n < 1)
-{
-    Console.WriteLine("Ввели не положительное число");
-}
-Console.WriteLine(NaturalNumber(n, m));
-
-int NaturalNumber(int n, int m)
-{
-    if (n == m)
-        return n;
-    else
-        Console.Write($"{NaturalNumber(n, m + 1)}, ");
-    return m;
-}
-
-int InputInt(string output)
-{
-    Console.Write(output);
-    return int.Parse(Console.ReadLine());
-} */
