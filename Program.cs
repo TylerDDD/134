@@ -1,13 +1,21 @@
-﻿// Задача номер 64.
+﻿// Задача номер 66.
 
-int M = Convert.ToInt32(Console.ReadLine());
-int N = Convert.ToInt32(Console.ReadLine());
-string PrintNumbers(int start, int end)
+int m = InputInt("Введите M:");
+int n = InputInt("Введите N:");
+Console.WriteLine($"Сумма элементов от {m} до {n} = {CountNaturalSum(m, n)}");
+
+int InputInt(string output)
 {
-    if (start == end) return start.ToString();
-    return (start + ", " + PrintNumbers(start + 1, end));
+    Console.Write(output);
+    return int.Parse(Console.ReadLine());
 }
-Console.WriteLine(PrintNumbers(M, N));
+
+int CountNaturalSum(int m, int n)
+{
+    if (m == n)
+        return n;
+    return n + CountNaturalSum(m, n - 1);
+}  
 
 // Задача номер 68.
 
@@ -32,24 +40,14 @@ int Akkerman(int m, int n)
         return Akkerman(m - 1, Akkerman(m, n - 1));
 } */
 
+// Задача номер 64.
 
-// Задача номер 66.
-
-/* int m = InputInt("Введите M:");
-int n = InputInt("Введите N:");
-Console.WriteLine($"Сумма элементов от {m} до {n} = {CountNaturalSum(m, n)}");
-
-int InputInt(string output)
+/* int M = Convert.ToInt32(Console.ReadLine());
+int N = Convert.ToInt32(Console.ReadLine());
+string PrintNumbers(int start, int end)
 {
-    Console.Write(output);
-    return int.Parse(Console.ReadLine());
+    if (start == end) return start.ToString();
+    return (start + ", " + PrintNumbers(start + 1, end));
 }
-
-int CountNaturalSum(int m, int n)
-{
-    if (m == n)
-        return n;
-    return n + CountNaturalSum(m, n - 1);
-}  */
-
+Console.WriteLine(PrintNumbers(M, N)); */
 
